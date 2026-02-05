@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Favorite Person ❤️</title>
+
+  <!-- Confetti & Fireworks libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #f5e1fd, #ffebee);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 540px;
+      background: white;
+      border-radius: 24px;
+      padding: 40px 28px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1, h2 {
+      color: #d81b60;
+      margin: 0.5em 0;
+      font-weight: 500;
+    }
+
+    .heart {
+      font-size: 2.8em;
+      margin: 0.4em 0;
+      animation: beat 1.8s infinite ease-in-out;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.15); }
+    }
+
+    button {
+      background: #ff4081;
+      color: white;
+      border: none;
+      padding: 16px 40px;
+      font-size: 1.15em;
+      border-radius: 50px;
+      margin: 16px 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4);
+    }
+
+    button:hover {
+      background: #f50057;
+      transform: translateY(-3px) scale(1.07);
+      box-shadow: 0 10px 25px rgba(245, 0, 87, 0.5);
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .love-frame {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 24px auto;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      border-radius: 22px;
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .love-frame::before {
+      content: "❤️";
+      position: absolute;
+      font-size: 2.3em;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ff4081;
+      animation: beat 2.4s infinite ease-in-out;
+    }
+
+    .love-frame img {
+      width: 100%;
+      border-radius: 16px;
+      border: 5px solid white;
+      display: block;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+
+    .photos-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 2rem 0;
+    }
+
+    .small-text {
+      font-size: 0.95em;
+      color: #777;
+      margin-top: 2.5em;
+    }
+
+    .celebration-text {
+      font-size: 1.4em;
+      color: #d81b60;
+      margin: 1.5em 0 2em;
+      font-weight: 500;
+    }
+
+    @media (max-width: 520px) {
+      .container { padding: 32px 20px; }
+      .photos-row { flex-direction: column; align-items: center; gap: 28px; }
+      .love-frame { max-width: 280px; }
+      button { padding: 16px 50px; min-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<audio id="bgMusic" loop volume="0.18" autoplay>
+  <source src="https://www.youtube.com/watch?v=2X_2IdybTV0" type="audio/mpeg">
+  <!-- Fallback: you can replace with a real hosted mp3 link later -->
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+
+  
+  <div id="page1" class="page active">
+    <h2>Hey Sugar! ❤️</h2>
+    <p>
+      If you're seeing this, I'm probably getting yelled at in basic right now…<br>
+      but I didn’t want Valentine’s Day to pass without asking you something.
+    </p>
+    <div class="heart">💕</div>
+    <button onclick="showPage('page2')">Click me</button>
+  </div>
+
+  <!-- PAGE 2 - Memories -->
+  <div id="page2" class="page">
+    <h2>These past months…</h2>
+
+    <div class="photos-row">
+      <div class="love-frame">
+        <img src="IMG_4035.JPG.jpeg" alt="us 1">
+      </div>
+      <div class="love-frame">
+        <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_3957.JPG.jpeg" alt="us 2">
+      </div>
+    </div>
+
+    <p>
+      These past months with you have meant more to me than you know.<br>
+      Even while I’m away, you’re still my favorite person.
+    </p>
+
+    <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_4075.JPG.jpeg" style="width:180px; margin: 2rem auto; display:block; border-radius:16px;">
+
+    <button onclick="showPage('page3')">One more thing…</button>
+  </div>
+
+  <!-- PAGE 3 - The Big Question -->
+  <div id="page3" class="page">
+    <h1 style="font-size: 2.8em; margin: 0.6em 0;">
+      Will you be my Valentine?
+    </h1>
+    <div class="heart" style="font-size: 5em;">❤️</div>
+
+    <button onclick="showPage('yesPage')">Yes 💕</button>
+    <button onclick="showPage('obviouslyPage')">Obviously yes 😄</button>
+
+    <p class="small-text">No wrong answers… but you already know that 😉</p>
+  </div>
+
+  <!-- YES PAGE -->
+  <div id="yesPage" class="page">
+    <h1 style="font-size: 3.2em; margin: 0.4em 0;">YESSS!!! 🥹💖</h1>
+    <p class="celebration-text">You just made me the happiest guy in the world</p>
+
+    <div class="photos-row">
+      <div class="love-frame">
+        <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_4035.JPG.jpeg" alt="us">
+      </div>
+      <div class="love-frame">
+        <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_3957.JPG.jpeg" alt="us">
+      </div>
+    </div>
+
+    <p style="font-size: 1.3em; margin: 1.5em 0;">
+      I love you more than words can say 💕<br>
+      Can't wait to be back with you.
+    </p>
+  </div>
+
+  <!-- OBVIOUSLY YES PAGE -->
+  <div id="obviouslyPage" class="page">
+    <h1 style="font-size: 3.2em; margin: 0.4em 0;">I KNEW IT! 😏💥</h1>
+    <p class="celebration-text">You're officially stuck with me forever now</p>
+
+    <div class="photos-row">
+      <div class="love-frame">
+        <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_4035.JPG.jpeg" alt="us">
+      </div>
+      <div class="love-frame">
+        <img src="C:\Users\pc\OneDrive\Desktop\AD\images\IMG_3957.JPG.jpeg" alt="us">
+      </div>
+      <!-- add more photos here if you want -->
+    </div>
+
+    <p style="font-size: 1.35em; margin: 1.8em 0; color: #d81b60;">
+      You're my everything.<br>
+      Forever & always, baby 🩷🔥
+    </p>
+  </div>
+
+</div>
+
+<script>
+// Page navigation
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Trigger effects based on page
+  if (pageId === 'page1') {
+    launchConfetti();
+  }
+  else if (pageId === 'yesPage') {
+    launchConfetti();
+    launchConfetti();
+  }
+  else if (pageId === 'obviouslyPage') {
+    launchFireworks();
+  }
+}
+
+// Confetti
+function launchConfetti() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ['#ff4081', '#ff79b0', '#fecfef', '#fff0f5', '#d81b60']
+  });
+}
+
+// Simple fireworks-style effect
+function launchFireworks() {
+  const duration = 3000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 6,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: ['#ff4081', '#ff79b0', '#d81b60', '#ffffff']
+    });
+    confetti({
+      particleCount: 6,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: ['#ff4081', '#ff79b0', '#d81b60', '#ffffff']
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+}
+
+// Try to play music when page loads or on first interaction
+window.addEventListener('load', () => {
+  const audio = document.getElementById('bgMusic');
+  audio.volume = 0.18;
+  // Most browsers block autoplay until user interaction
+  // So we can try again after first click
+  document.addEventListener('click', () => {
+    audio.play().catch(() => {});
+  }, { once: true });
+});
+
+
+</script>
+
+</body>
+</html>

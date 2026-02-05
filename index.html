@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For My Favorite Person ❤️</title>
 
-  <!-- Confetti & Fireworks libraries -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <style>
@@ -146,7 +145,6 @@
 
 <audio id="bgMusic" loop volume="0.18" autoplay>
   <source src="https://www.youtube.com/watch?v=2X_2IdybTV0" type="audio/mpeg">
-  <!-- Fallback: you can replace with a real hosted mp3 link later -->
   Your browser does not support the audio element.
 </audio>
 
@@ -172,7 +170,7 @@
         <img src="https://imgur.com/a/645xFZU" alt="us 1">
       </div>
       <div class="love-frame">
-        <img src="\IMG_3957.JPG.jpeg" alt="us 2">
+        <img src="/IMG_3957.JPG.jpeg" alt="us 2">
       </div>
     </div>
 
@@ -299,7 +297,6 @@ function launchFireworks() {
   }());
 }
 
-// Try to play music when page loads or on first interaction
 window.addEventListener('load', () => {
   const audio = document.getElementById('bgMusic');
   audio.volume = 0.18;
@@ -316,4 +313,5 @@ window.addEventListener('load', () => {
 </body>
 
 </html>
+
 

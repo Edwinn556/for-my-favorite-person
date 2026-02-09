@@ -100,16 +100,16 @@
 
     .polaroid-frame {
       background: #fff;
-    /*  padding: 14px 14px 50px 14px; /* extra bottom space for caption feel */
+      padding: 14px 14px 60px 14px;
       border: 1px solid #ddd;
-      border-bottom: 45px solid #fff;
+      border-bottom: 55px solid #fff;
       box-shadow: 0 8px 20px rgba(0,0,0,0.18),
                   inset 0 0 10px rgba(0,0,0,0.06);
       transform: rotate(2deg);
       margin: 32px 16px;
       position: relative;
       width: 100%;
-      max-width: 280px;
+      max-width: 300px;
       transition: all 0.4s ease;
     }
     .polaroid-frame:hover {
@@ -123,11 +123,23 @@
       display: block;
       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
+    .polaroid-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Comic Sans MS", "Chalkboard SE", cursive, sans-serif;
+      font-size: 1em;
+      color: #444;
+      padding: 0 12px;
+      line-height: 1.3;
+    }
     .photos-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 30px;
       margin: 2rem 0;
     }
     .small-text {
@@ -144,10 +156,9 @@
 
     @media (max-width: 520px) {
       .container { padding: 32px 20px; }
-      .photos-row { flex-direction: column; align-items: center; gap: 40px; }
-      .love-frame, .polaroid-frame { max-width: 280px; }
+      .photos-row { flex-direction: column; align-items: center; gap: 44px; }
+      .polaroid-frame, .love-frame { max-width: 290px; margin: 24px 8px; }
       button { padding: 16px 50px; min-width: 240px; }
-      .polaroid-frame { margin: 24px 8px; }
     }
   </style>
 </head>
@@ -184,14 +195,24 @@
     <button onclick="showPage('page3')">One more thing…</button>
   </div>
 
-  <!-- PAGE 3 - The Big Question -->
+  <!-- PAGE 3 - The Big Question (with photo frame at top) -->
   <div id="page3" class="page">
-    <h1 style="font-size: 2.8em; margin: 0.6em 0;">
+  
+    <div class="photos-row" style="margin-bottom: 1.5rem;">
+      <div class="polaroid-frame" style="transform: rotate(1.5deg); max-width: 340px;">
+        <img src="IMG_4184.JPG.jpeg" alt="My photo for you">
+       <!-- <div class="polaroid-caption">This is me thinking about you right now</div> -->
+      </div>
+    </div>
+
+    <h1 style="font-size: 2.8em; margin: 0.4em 0;">
       Will you be my Valentine?
     </h1>
     <div class="heart" style="font-size: 5em;">❤️</div>
+
     <button onclick="showPage('yesPage')">Yes 💕</button>
     <button onclick="showPage('obviouslyPage')">Obviously yes 😄</button>
+
     <p class="small-text">No wrong answers… but you already know that 😉</p>
   </div>
 
@@ -203,17 +224,29 @@
     <div class="photos-row">
       <div class="polaroid-frame" style="transform: rotate(3deg);">
         <img src="IMG_4089.JPG.jpeg" alt="us">
-        <div class="polaroid-caption">Save some hugs for when I get back </div>
+        <div class="polaroid-caption">Save some hugs for when I get back</div>
       </div>
       <div class="polaroid-frame" style="transform: rotate(-2deg);">
         <img src="IMG_4088.JPG.jpeg" alt="us">
-         <div class="polaroid-caption">10/10 would choose you again</div>
+        <div class="polaroid-caption">10/10 would choose you again</div>
       </div>
     </div>
 
-    <p style="font-size: 1.3em; margin: 1.5em 0;">
+    <p style="font-size: 1.3em; margin: 1.8em 0 1em;">
       Can't wait to be back with you babe. 💕
     </p>
+
+    <!-- New bottom frames -->
+    <div class="photos-row" style="margin-top: 2.5rem;">
+      <div class="polaroid-frame" style="transform: rotate(-1.5deg);">
+        <img src="1342.png" alt="extra photo">
+        <div class="polaroid-caption">no smile cause i had to look 'tuff' for the camera yk how it is. but the message still stands <3</div>
+      </div>
+    <!--  <div class="polaroid-frame" style="transform: rotate(2deg);">
+        <img src="BOTTOM_PHOTO_2.JPG" alt="extra photo">
+        <div class="polaroid-caption">Or here... or ill just  leave it empty</div>-->
+      </div>
+    </div>
   </div>
 
   <!-- OBVIOUSLY YES PAGE -->
@@ -224,17 +257,29 @@
     <div class="photos-row">
       <div class="polaroid-frame" style="transform: rotate(2.5deg);">
         <img src="IMG_4090.JPG.jpeg" alt="us">
-         <div class="polaroid-caption">Counting down the days already</div> 
+        <div class="polaroid-caption">Counting down the days already</div>
       </div>
       <div class="polaroid-frame" style="transform: rotate(-3deg);">
         <img src="IMG_4085.JPG.jpeg" alt="us">
-         <div class="polaroid-caption">BRB, Miss me just a little bit (but like... a lot) </div> 
+        <div class="polaroid-caption">BRB, Miss me just a little bit (but like... a lot)</div>
       </div>
     </div>
 
-    <p style="font-size: 1.35em; margin: 1.8em 0; color: #d81b60;">
+    <p style="font-size: 1.35em; margin: 1.8em 0 1em; color: #d81b60;">
       FYI if I get yelled at, I'm blaming you for distracting me
     </p>
+
+    <!-- New bottom frames -->
+    <div class="photos-row" style="margin-top: 2.5rem;">
+      <div class="polaroid-frame" style="transform: rotate(1deg);">
+        <img src="WhatsApp Image 2026-02-09 at 05.47.28.jpeg" alt="extra photo">
+        <div class="polaroid-caption">sorry sunshine but this is the page where you see the weird stuffs</div>
+      </div>
+      <div class="polaroid-frame" style="transform: rotate(-2deg);">
+        <img src="WhatsApp Image 2026-02-09 at 05.51.21.jpeg" alt="extra photo">
+        <div class="polaroid-caption">who rocked the '.5 in a durag' better tho me? or mr teddy, let me know in the comment section below (there is no comment section below)</div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -293,6 +338,3 @@ function launchFireworks() {
 
 </body>
 </html>
-
-
-
